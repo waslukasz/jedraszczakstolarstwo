@@ -1,0 +1,647 @@
+/* --- Zmienne Globalne --- */
+:root {
+  --primary-color: #795548;
+  --secondary-color: #d7ccc8;
+  --dark-color: #3e2723;
+  --light-color: #f5f5f5;
+  --white-color: #ffffff;
+  --font-primary: "Montserrat", sans-serif;
+  --font-secondary: "Playfair Display", serif;
+}
+
+/* --- Style Podstawowe --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.page-section {
+  padding-top: 120px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+/* --- Przyciski --- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--white-color);
+  border-color: var(--white-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+}
+
+/* --- Nagłówek --- */
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--dark-color);
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: 700;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: calc(100% - 30px);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--dark-color);
+  margin: 5px 0;
+  transition: all 0.3s;
+}
+
+/* --- Sekcja Hero --- */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white-color);
+  background: url("../images/hero-background.jpg") no-repeat center center/cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.hero .btn {
+  margin: 10px;
+}
+
+/* --- Sekcja Cechy (Features) --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.feature-item h3 {
+  margin: 15px 0 10px;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+}
+
+.feature-item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #6d4c41;
+  max-width: 35ch;
+  margin: 0 auto;
+}
+
+.feature-icon {
+  width: 70px;
+  height: auto;
+}
+
+/* --- Sekcja Oferta --- */
+.offer {
+  background-color: var(--white-color);
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.offer-card {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  background: var(--white-color);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.offer-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.offer-card-image-wrapper {
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.offer-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.offer-card:hover img {
+  transform: scale(1.05);
+}
+
+.offer-card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.offer-card-content h3 {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.offer-card-content p {
+  flex-grow: 1;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.btn-details {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-decoration: none;
+  transition: gap 0.3s ease, color 0.3s ease;
+  align-self: flex-start;
+}
+
+.btn-details:hover {
+  color: var(--dark-color);
+  gap: 12px;
+}
+
+.btn-details::after {
+  content: "→";
+}
+
+/* --- OSTATECZNA, SPÓJNA WERSJA STRONY KONTAKTOWEJ --- */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Daje więcej miejsca na mapę */
+  gap: 30px;
+  margin-top: 40px;
+  align-items: flex-start;
+}
+
+.contact-details-card {
+  background: var(--white-color);
+  border-radius: 8px;
+  padding: 30px;
+  border: 1px solid #eaeaea;
+  height: 100%; /* Karta będzie tak wysoka jak mapa */
+}
+
+.contact-details-card h3 {
+  font-family: var(--font-secondary);
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-details-card .contact-item {
+  margin-bottom: 25px;
+}
+
+.contact-details-card .contact-item-text strong {
+  display: block;
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-details-card .contact-item-text span,
+.contact-details-card .contact-item-text a {
+  font-size: 1.1rem;
+  color: var(--dark-color);
+  text-decoration: none;
+  line-height: 1.6;
+  font-weight: 500;
+  display: block;
+}
+
+.contact-details-card .contact-item-text a {
+  font-weight: 700;
+  transition: color 0.3s;
+}
+
+.contact-details-card .contact-item-text a:hover {
+  color: var(--primary-color);
+}
+
+.map-container {
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+  height: 100%; /* Mapa będzie tak wysoka jak karta z danymi */
+  min-height: 500px; /* Minimalna wysokość, żeby nie była zbyt niska */
+  border: 1px solid #eaeaea;
+}
+
+/* Responsywność dla nowego układu */
+@media (max-width: 992px) {
+  .contact-layout {
+    grid-template-columns: 1fr; /* Zmiana na jedną kolumnę */
+  }
+}
+
+/* --- Podstrony Produktów --- */
+.breadcrumbs {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.breadcrumbs a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.product-details-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.product-gallery img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-info h1 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.product-description {
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.product-specs {
+  margin-bottom: 60px;
+}
+
+.product-specs h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+.product-specs p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.specs-table thead {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.specs-table tbody tr:nth-child(even) {
+  background-color: var(--white-color);
+}
+
+/* --- Sekcja Wezwania do Działania (CTA) --- */
+.cta-section {
+  background-color: var(--dark-color);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cta-title {
+  font-family: var(--font-secondary);
+  font-size: 2.5rem;
+  color: var(--white-color);
+  margin-bottom: 15px;
+}
+
+.cta-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+}
+
+/* --- Stopka --- */
+.footer-final {
+  background-color: var(--dark-color);
+  color: #e0e0e0;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.footer-contact-details {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-contact-details .contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-contact-details a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-contact-details a:hover {
+  color: var(--white-color);
+  text-decoration: underline;
+}
+
+.footer-contact-details .footer-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-contact-details .footer-icon svg {
+  fill: var(--primary-color);
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.footer-nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: var(--white-color);
+}
+
+.footer-bottom {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Media Queries (Responsywność) --- */
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .contact-info-grid {
+    grid-template-columns: 1fr 1fr; /* Dwie kolumny dla danych kontaktowych na tabletach i większych */
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .nav.active {
+    display: block;
+  }
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+  .nav-link {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-link::after {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .page-section {
+    padding-top: 100px;
+  }
+
+  .product-details-layout {
+    grid-template-columns: 1fr;
+  }
+  .product-info h1 {
+    font-size: 2.2rem;
+  }
+}
