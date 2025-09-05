@@ -9,6 +9,7 @@
       content="Rodzinna firma z Podhala. Produkujemy boazerię, deski podłogowe, tarasowe, więźby dachowe i inne wyroby z drewna najwyższej jakości."
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,24 +40,38 @@
       <section class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-text">
-          <h1>Sztuka Tradycyjnej Boazerii i Stolarki Góralskiej</h1>
-          <p>
+          <h1 data-aos="fade-down">
+            Sztuka Tradycyjnej Boazerii i Stolarki Góralskiej
+          </h1>
+          <p data-aos="fade-down" data-aos-delay="200">
             Jesteśmy rodzinną firmą z serca Podhala. Z pasją i precyzją tworzymy
             najwyższej jakości wyroby z drewna, łącząc wieloletnią tradycję z
             nowoczesną technologią obróbki.
           </p>
-          <a href="oferta.html" class="btn btn-primary">Poznaj naszą ofertę</a>
-          <a href="kontakt.html" class="btn btn-secondary">Skontaktuj się</a>
+          <a
+            href="oferta.html"
+            class="btn btn-primary"
+            data-aos="fade-up"
+            data-aos-delay="400"
+            >Poznaj naszą ofertę</a
+          >
+          <a
+            href="kontakt.html"
+            class="btn btn-secondary"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            >Skontaktuj się</a
+          >
         </div>
       </section>
 
       <section class="features">
         <div class="container">
-          <h2 class="section-title">
+          <h2 class="section-title" data-aos="fade-up">
             Dlaczego My? Gwarancja Podhalańskiej Solidności
           </h2>
           <div class="features-grid">
-            <div class="feature-item">
+            <div class="feature-item" data-aos="fade-up">
               <img
                 src="https://img.icons8.com/ios/80/795548/mountain.png"
                 alt="Ikona góry"
@@ -68,7 +83,7 @@
                 praca, ale i dziedzictwo.
               </p>
             </div>
-            <div class="feature-item">
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="150">
               <img
                 src="https://img.icons8.com/ios/80/795548/wood.png"
                 alt="Ikona drewna"
@@ -80,7 +95,7 @@
                 zapewniając trwałość na lata.
               </p>
             </div>
-            <div class="feature-item">
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
               <img
                 src="https://img.icons8.com/ios/80/795548/gear.png"
                 alt="Ikona maszyny"
@@ -92,7 +107,7 @@
                 najwyższej dokładności.
               </p>
             </div>
-            <div class="feature-item">
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="450">
               <img
                 src="https://img.icons8.com/ios/80/795548/home--v1.png"
                 alt="Ikona domu"
@@ -109,7 +124,7 @@
       </section>
 
       <section class="cta-section">
-        <div class="container">
+        <div class="container" data-aos="zoom-in">
           <h2 class="cta-title">Poznaj naszą pełną ofertę</h2>
           <p class="cta-subtitle">
             Zobacz wszystkie produkty, które wykonujemy z pasją i najwyższą
@@ -121,9 +136,9 @@
 
       <section class="offer">
         <div class="container">
-          <h2 class="section-title">Nasze Produkty</h2>
+          <h2 class="section-title" data-aos="fade-up">Nasze Produkty</h2>
           <div class="offer-grid">
-            <div class="offer-card">
+            <div class="offer-card" data-aos="fade-up">
               <a href="produkty/boazeria.html">
                 <div class="offer-card-image-wrapper">
                   <img
@@ -144,7 +159,7 @@
               </div>
             </div>
 
-            <div class="offer-card">
+            <div class="offer-card" data-aos="fade-up" data-aos-delay="150">
               <a href="produkty/imitacja-bala.html">
                 <div class="offer-card-image-wrapper">
                   <img
@@ -165,7 +180,7 @@
               </div>
             </div>
 
-            <div class="offer-card">
+            <div class="offer-card" data-aos="fade-up" data-aos-delay="300">
               <a href="produkty/podloga.html">
                 <div class="offer-card-image-wrapper">
                   <img src="assets/images/podloga.jpg" alt="Deski podłogowe" />
@@ -183,7 +198,7 @@
               </div>
             </div>
 
-            <div class="offer-card">
+            <div class="offer-card" data-aos="fade-up">
               <a href="produkty/deski-tarasowe.html">
                 <div class="offer-card-image-wrapper">
                   <img
@@ -204,7 +219,7 @@
               </div>
             </div>
 
-            <div class="offer-card">
+            <div class="offer-card" data-aos="fade-up" data-aos-delay="150">
               <a href="produkty/deski-do-kantu.html">
                 <div class="offer-card-image-wrapper">
                   <img
@@ -225,7 +240,7 @@
               </div>
             </div>
 
-            <div class="offer-card">
+            <div class="offer-card" data-aos="fade-up" data-aos-delay="300">
               <a href="produkty/wiezba.html">
                 <div class="offer-card-image-wrapper">
                   <img src="assets/images/wiezba.jpg" alt="Więźba dachowa" />
@@ -299,5 +314,12 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
   </body>
 </html>

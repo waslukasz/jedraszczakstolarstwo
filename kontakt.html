@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontakt i Lokalizacja - Jędraszczak Stolarstwo</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,19 +33,27 @@
     <main>
       <section class="contact page-section">
         <div class="container">
-          <h2 class="section-title">Kontakt i Lokalizacja</h2>
-          <p class="section-subtitle">
+          <h2 class="section-title" data-aos="fade-up">
+            Kontakt i Lokalizacja
+          </h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
             Jesteśmy do Twojej dyspozycji. Zadzwoń, napisz lub odwiedź nas
-            osobiście w naszej siedzibie w Piekielniku.
+            osobiście w Podszklu.
           </p>
 
           <div class="contact-layout">
-            <div class="contact-details-card">
+            <div
+              class="contact-details-card"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
               <h3>Jędraszczak Stolarstwo</h3>
               <div class="contact-item">
                 <div class="contact-item-text">
                   <strong>Adres</strong>
-                  <span>ul. Podszkle 163<br />34-472 Piekielnik</span>
+                  <span
+                    >Podszkle<br />ul. Podszkle 163<br />34-472 Piekielnik</span
+                  >
                 </div>
               </div>
               <div class="contact-item">
@@ -70,7 +79,11 @@
               </div>
             </div>
 
-            <div class="map-container">
+            <div
+              class="map-container"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2611.823912953218!2d19.7884180156832!3d49.4913889793547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4715e0b3c3d3d3d3%3A0x3d3d3d3d3d3d3d3d!2sPodszkle%20163%2C%2034-472%20Piekielnik%2C%20Poland!5e0!3m2!1sen!2sus!4v1693891200000!5m2!1sen!2sus"
                 width="100%"
@@ -141,5 +154,12 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
   </body>
 </html>
